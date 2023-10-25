@@ -1,3 +1,16 @@
+:root {
+  /* cores */
+  --cor1: #6278F7;
+  --cor2: #95ffd4;
+  --cor3: #f2f2f2;
+
+  /* fontes */
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

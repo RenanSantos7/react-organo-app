@@ -1,0 +1,16 @@
+import './Formulario.css';
+import CampoTexto from './components/CampoTexto';
+
+function Formulario () {
+    return(
+        <section>
+            <form>
+                <CampoTexto label="Nome" placeholder="Digite o nome" />
+                <CampoTexto label="Cargo" placeholder="Digite o cargo" />
+                <CampoTexto label="Imagem" placeholder="Cole a URL da imagem" />
+            </form>
+        </section>
+    )
+}
+
+export default Formulario
