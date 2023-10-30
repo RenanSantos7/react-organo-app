@@ -6,7 +6,7 @@
     font-weight: 600;
     display: block;
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .campo-texto input {
@@ -15,7 +15,7 @@
     width: 100%;
     border: none;
     outline: none;
-    font-size: 24px;
+    font-size: 16px;
     padding: 24px;
     border-radius: 12px;
 }

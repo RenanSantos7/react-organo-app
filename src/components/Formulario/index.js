@@ -1,9 +1,11 @@
 import './Formulario.css';
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
+import Botao from '../Botao';
 
-function Formulario() {
+export default function Formulario() {
     const times = [
+        '',
         'Programação',
         'Front-End',
         'Data Science',
@@ -20,9 +22,8 @@ function Formulario() {
                 <CampoTexto label="Cargo" placeholder="Digite o cargo" />
                 <CampoTexto label="Imagem" placeholder="Cole a URL da imagem" />
                 <ListaSuspensa label="Times" itens={times} />
+                <Botao>Criar Card</Botao>
             </form>
         </section>
     )
 }
-
-export default Formulario
