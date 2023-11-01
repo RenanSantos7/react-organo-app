@@ -14,14 +14,19 @@ export default function Formulario() {
         'Inovação e Gestão'
     ]
 
+    function aoSalvar(event) {
+        event.preventDefault();
+        console.log('Tá bom, Tá bom!')
+    }
+
     return(
         <section className="formulario">
-            <form>
+            <form onSubmit={aoSalvar}>
             <h2>Preencha os dados para criar o cardo do colaborador</h2>
-                <CampoTexto label="Nome" placeholder="Digite o nome" />
-                <CampoTexto label="Cargo" placeholder="Digite o cargo" />
+                <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite o nome" />
+                <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite o cargo" />
                 <CampoTexto label="Imagem" placeholder="Cole a URL da imagem" />
-                <ListaSuspensa label="Times" itens={times} />
+                <ListaSuspensa obrigatorio={true} label="Times" itens={times} />
                 <Botao>Criar Card</Botao>
             </form>
         </section>

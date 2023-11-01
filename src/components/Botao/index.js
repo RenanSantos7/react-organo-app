@@ -5,3 +5,4 @@ export default function Botao(props) {
         <button className='botao'>{props.children}</button>
     )
 }
+
