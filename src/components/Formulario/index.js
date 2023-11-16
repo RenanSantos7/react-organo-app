@@ -4,7 +4,7 @@ import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react'
 
-export default function Formulario() {
+export default function Formulario(props) {
     const times = [
         '',
         'Programação',
@@ -25,7 +25,12 @@ export default function Formulario() {
 
     function aoSalvar(event) {
         event.preventDefault();
-        console.log('Form foi submetido: ', nome, cargo, imagem, time)
+        props.aoCadastrarColab({
+            nome: nome,
+            cargo: cargo,
+            imagem: imagem,
+            time: time
+        })
     }
 
     return(
