@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 :root {
     /* % CORES */
@@ -7,22 +7,6 @@
     --cor1: #6278f7;
     --cor2: #95ffd4;
     --cor3: #f2f2f2;
-
-    /* Cores times */
-    --cor-programacao-destaque: #57c278;
-    --cor-programacao-fundo: #d9f7e9;
-    --cor-front-destaque: #82cffa;
-    --cor-front-fundo: #e8f8ff;
-    --cor-data-destaque: #a6d157;
-    --cor-data-fundo: #f0f8e2;
-    --cor-devops-destaque: #d06b69;
-    --cor-devops-fundo: #fde7e8;
-    --cor-ux-destaque: #db6ebf;
-    --cor-ux-fundo: #fae9f5;
-    --cor-mobile-destaque: #ffba05;
-    --cor-mobile-fundo: #fff5d9;
-    --cor-inovacao-destaque: #ff8a29;
-    --cor-inovacao-fundo: #ffeedf;
 
     /* % FONTES */
     --fonte-titulo: 'Prata', serif;

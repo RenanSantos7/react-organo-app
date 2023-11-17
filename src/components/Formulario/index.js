@@ -14,6 +14,8 @@ export default function Formulario(props) {
         'UX e Design',
         'Inovação e Gestão'
     ]
+    // let timesNomes = times.map(item => item.nome)
+    // timesNomes= ['', ...times]
 
     // 'useState' gera um array com dois valores
     // [valor, setValor] separa esse array e atribui cada

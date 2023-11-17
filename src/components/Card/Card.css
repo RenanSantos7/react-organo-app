@@ -1,0 +1,38 @@
+.card {
+    text-align: center;
+    width: 260px;
+    height: 270px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    top: 25px;
+    left: calc(50% - 60px);
+}
+
+.card .text-container {
+    padding: 32px;
+    padding-top: 60px;
+    border-top: 90px solid var(--cor-programacao-destaque);
+}
+
+.card h4 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: var(--cor1);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1rem;
+}

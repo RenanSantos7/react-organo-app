@@ -11,7 +11,6 @@ export default function CampoTexto(props) {
         <div className="campo-texto">
             <label>{props.label}</label>
             <input value={props.valor} onChange={aoDigitar} type='text' placeholder={placeholderMod} required={props.obrigatorio} />
-            <input value={props.valor} onChange={aoDigitar} type='text' placeholder={placeholderMod} required={props.obrigatorio} />
         </div>
     )
 }
