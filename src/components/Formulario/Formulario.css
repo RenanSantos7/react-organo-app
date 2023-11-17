@@ -13,9 +13,9 @@
 }
 
 .formulario h2 {
-    font-family: var(--font-titulo);
+    font-family: var(--fonte-titulo);
     font-weight: 400;
-    font-size: 32px;
+    font-size: 1.8rem;
     color: #212121;
 }
 
