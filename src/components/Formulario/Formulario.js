@@ -1,25 +1,10 @@
 import './Formulario.css';
-import CampoTexto from '../CampoTexto';
-import ListaSuspensa from '../ListaSuspensa';
-import Botao from '../Botao';
+import CampoTexto from '../CampoTexto/CampoTexto';
+import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
+import Botao from '../Botao/Botao';
 import { useState } from 'react'
 
 export default function Formulario(props) {
-    const times = [
-        '',
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'DevOps',
-        'UX e Design',
-        'Inovação e Gestão'
-    ]
-    // let timesNomes = times.map(item => item.nome)
-    // timesNomes= ['', ...times]
-
-    // 'useState' gera um array com dois valores
-    // [valor, setValor] separa esse array e atribui cada
-    // um desses valores a uma dessas variáveis
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -65,7 +50,7 @@ export default function Formulario(props) {
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Times"
-                    itens={times}
+                    itens={props.timesNomes}
                     valor={time}
                     aoAlterar = {valor => setTime(valor)}
                 />
