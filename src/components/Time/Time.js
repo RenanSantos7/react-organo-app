@@ -8,18 +8,14 @@ export default function Time(props) {
             <h3>{props.nome}</h3>
             <div className='linha-horizontal' style={{ backgroundColor:props.corDestaque }}></div>
             <div className='cards'>
-                <Card
-                    corDestaque={props.corDestaque}
-                />
-                <Card
-                    corDestaque={props.corDestaque}
-                />
-                <Card
-                    corDestaque={props.corDestaque}
-                />
-                <Card
-                    corDestaque={props.corDestaque}
-                />
+                {props.colaboradores.map(colaborador => 
+                    <Card 
+                        nome={colaborador.nome}
+                        cargo={colaborador.cargo}
+                        imagem={colaborador.imagem}
+                        corDestaque={props.corDestaque}
+                    />
+                )}
             </div>
         </section>
     )

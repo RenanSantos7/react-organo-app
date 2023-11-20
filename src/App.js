@@ -17,8 +17,46 @@ export default function App() {
 
   let timesNomes = times.map(item => `${item.nome}`)
   timesNomes= ['', ...timesNomes]
-  
-  const [colaboradores, setColaboradores] = useState([])
+
+  const colaboradoresOriginais = [
+    {
+      id: '0',
+      nome: 'Monica Hillman',
+      cargo: 'Desenvolvedora Front-End e Instrutora na Alura',
+      imagem: 'https://github.com/monicahillman.png',
+      time: 'Front-End'
+    },
+    {
+      id: '1',
+      nome: 'Juliana Amoasei',
+      cargo: 'Desenvolvedora de Software e Instrutora na Alura',
+      imagem: 'https://github.com/JulianaAmoasei.png',
+      time: 'Programação'
+    },
+    {
+      id: '2',
+      nome: 'Guilherme Lima',
+      cargo: 'Desenvolvedora Front-End e Instrutora na Alura',
+      imagem: 'https://cdn2.gnarususercontent.com.br/1/58372/faab17bc-a43f-42ed-b701-17f954bc776d.png',
+      time: 'Front-End'
+    },
+    {
+      id: '3',
+      nome: 'Vinicios Neves',
+      cargo: 'Instrutor na Alura',
+      imagem: 'https://github.com/viniciosneves.png',
+      time: 'DevOps'
+    },
+    {
+      id: '4',
+      nome: 'Paulo Silveira',
+      cargo: 'Hipster e CEO da Alura',
+      imagem:  'https://github.com/Alura.png',
+      time: 'Inovação e Gestão'
+    },
+  ]
+
+  const [colaboradores, setColaboradores] = useState(colaboradoresOriginais)
 
   function aoAddNvColaborador(colaborador) {
     setColaboradores([...colaboradores, colaborador])
@@ -33,7 +71,15 @@ export default function App() {
         timesNomes = {timesNomes}
       />
     
-      {times.map(time => <Time key={time.nome} nome={time.nome} corDestaque={time.corDestaque} corFundo={time.corFundo} />)}
+      {times.map(time =>
+        <Time
+          key={time.nome}
+          nome={time.nome}
+          corDestaque={time.corDestaque}
+          corFundo={time.corFundo}
+          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+        />
+      )}
 
       <Rodape />
     </div>
