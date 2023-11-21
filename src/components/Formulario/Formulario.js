@@ -18,6 +18,12 @@ export default function Formulario(props) {
             imagem: imagem,
             time: time
         })
+
+        // Limpar os campos após o envio do formulário
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
     }
 
     return(

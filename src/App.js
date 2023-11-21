@@ -17,7 +17,7 @@ export default function App() {
 
   let timesNomes = times.map(item => `${item.nome}`)
   timesNomes= ['', ...timesNomes]
-
+ 
   const colaboradoresOriginais = [
     {
       id: '0',

@@ -4,7 +4,6 @@ export default function CampoTexto(props) {
     const placeholderMod = `${props.placeholder}...`
     function aoDigitar(event) {
         props.aoAlterar(event.target.value)
-        props.aoAlterar(event.target.value)
     };
     
     return (

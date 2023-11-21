@@ -1,8 +1,38 @@
-footer {
+.footer {
     background-color: var(--cor1);
-    text-align: center;
+    color: white;
+    padding: 0;
+    margin: 0;
+    background-image: url('./rodape.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-footer img {
-    max-width: 100%;
+.footer .container {
+    margin: 0 auto;
+    width: min(90%, 1440px);
+    height: 220px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    gap: 48px;
+}
+
+.footer ul img {
+    width: 25px;
+}
+
+.footer .logo {
+    height: 64px;
+}
+
+.footer .texto {
+    width: 280px;
+    line-height: 1.25;
 }
