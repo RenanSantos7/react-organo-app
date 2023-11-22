@@ -16,7 +16,7 @@ export default function Rodape(props) {
     
                 <a href='#'><img title='Clique para voltar ao início' className='logo' src={logo} alt='Organo Logo' /></a>
     
-                <p className='texto'>Desenvolvido por Renan Santos na Alura</p>
+                <p className='texto'>Desenvolvido por Renan Santos<br />na Alura</p>
             </div>
         </footer>
     )
