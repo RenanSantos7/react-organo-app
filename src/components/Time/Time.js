@@ -11,9 +11,10 @@ export default function Time(props) {
                 <div className='cards'>
                     {props.colaboradores.map(colaborador =>
                         <Card
+                            key={colaborador.nome}
                             nome={colaborador.nome}
                             cargo={colaborador.cargo}
-                            imagem={colaborador.imagem}
+                            imagem={colaborador.imagem || 'https://github.com/Alura.png'}
                             corDestaque={props.corDestaque}
                         />
                     )}

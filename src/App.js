@@ -37,7 +37,7 @@ export default function App() {
       id: '2',
       nome: 'Guilherme Lima',
       cargo: 'Desenvolvedora Front-End e Instrutora na Alura',
-      imagem: 'https://cdn2.gnarususercontent.com.br/1/58372/faab17bc-a43f-42ed-b701-17f954bc776d.png',
+      imagem: 'https://github.com/guilhermeonrails.png',
       time: 'Front-End'
     },
     {
