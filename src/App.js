@@ -54,12 +54,30 @@ export default function App() {
       imagem:  'https://github.com/Alura.png',
       time: 'Inovação e Gestão'
     },
+    {
+      id: '5',
+      nome: 'Luiz Fernando Ribeiro',
+      cargo: 'Instrutor na Alura',
+      imagem:  'https://github.com/lfrprazeres.png',
+      time: 'Programação'
+    },
+    {
+      id: '6',
+      nome: 'Isadora Cardoso',
+      cargo: 'Instrutor na Alura',
+      imagem:  'https://cdn2.gnarususercontent.com.br/1/1159677/d270e454-a78c-415e-9f1b-dd237137100a.jpg',
+      time: 'UX e Design'
+    },
   ]
 
   const [colaboradores, setColaboradores] = useState(colaboradoresOriginais)
 
   function aoAddNvColaborador(colaborador) {
     setColaboradores([...colaboradores, colaborador])
+  }
+
+  function deletarColaborador() {
+    
   }
 
   return (
@@ -78,6 +96,7 @@ export default function App() {
           corDestaque={time.corDestaque}
           corFundo={time.corFundo}
           colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+          aoDeletar={deletarColaborador}
         />
       )}
 

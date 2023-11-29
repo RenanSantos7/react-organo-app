@@ -16,6 +16,7 @@ export default function Time(props) {
                             cargo={colaborador.cargo}
                             imagem={colaborador.imagem || 'https://github.com/Alura.png'}
                             corDestaque={props.corDestaque}
+                            aoDeletar={props.aoDeletar}
                         />
                     )}
                 </div>

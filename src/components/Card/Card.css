@@ -1,6 +1,11 @@
+.card-wrapper {
+    position: relative;
+}
+
 .card {
     text-align: center;
     width: 280px;
+    height: 320px;
     position: relative;
     overflow: hidden;
     background-color: white;
@@ -39,3 +44,21 @@
     margin: 0;
     padding: 0;
 }
+
+.deletar {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 2rem;
+    color: white;
+    padding: .1em;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 100;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+ .deletar:hover {
+    opacity: 1;
+} 
