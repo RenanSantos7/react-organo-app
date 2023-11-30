@@ -1,7 +1,31 @@
+.color-input-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px 5px hsla(0,0%, 0%, .1);
+    
+    overflow: visible;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.input-cor {
+    width: 180%;
+    height: 60px;
+    clip-path: circle(14px at 50% 50%);
+}
+
 .time {
     padding: 32px;
     text-align: center;
     width: 100%;
+    position: relative;
 }
 
 .time h3 {

@@ -6,6 +6,9 @@ export default function Time(props) {
     if (props.colaboradores.length > 0) {
         return (
             <section className='time' style={{ backgroundColor: props.corFundo }}>
+                <div className='color-input-wrapper'>
+                    <input type='color' className='input-cor' value={props.corDestaque} />
+                </div>
                 <h3>{props.nome}</h3>
                 <div className='linha-horizontal' style={{ backgroundColor: props.corDestaque }}></div>
                 <div className='cards'>
