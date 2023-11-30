@@ -72,7 +72,7 @@ export default function App() {
 
   const [colaboradores, setColaboradores] = useState(colaboradoresOriginais)
 
-  function aoAddNvColaborador(colaborador) {
+  function addNvColaborador(colaborador) {
     setColaboradores([...colaboradores, colaborador])
   }
 
@@ -82,10 +82,11 @@ export default function App() {
 
   function mudaCorTime(cor, nome) {
     setTimes(times.map(time => {
-      if (time.nome === nome) {
-        time.corDestaque = cor
+      if(time.nome === nome) {
+        time.corDestaque = cor;
       }
-    }))
+      return time;
+    }));
   }
 
   return (
@@ -93,7 +94,7 @@ export default function App() {
       <Banner />
     
       <Formulario
-        aoCadastrarColab={colaborador => aoAddNvColaborador(colaborador)}
+        aoCadastrarColab={colaborador => addNvColaborador(colaborador)}
         timesNomes = {timesNomes}
       />
 
@@ -109,7 +110,7 @@ export default function App() {
             corFundo={time.corFundo}
             colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}
-            mudarCor={mudaCorTime}
+            mudaCor={mudaCorTime}
           />
         )}
       </section>

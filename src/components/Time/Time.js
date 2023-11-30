@@ -1,28 +1,37 @@
-import Card from '../Card/Card'
 import './Time.css'
+import Card from '../Card/Card'
 
-export default function Time(props) {
+export default function Time({nome, corDestaque, corFundo, colaboradores, aoDeletar, mudaCor}) {
 
-    if (props.colaboradores.length <= 0) {
+    if (colaboradores.length <= 0) {
         return null
     }
 
     return (
-        <section className='time' style={{ backgroundColor: props.corFundo }}>
+        <section className='time' style={{ backgroundColor: corFundo }}>
             <div className='color-input-wrapper'>
-                <input type='color' className='input-cor' value={props.corDestaque} />
+                <input
+                    type='color'
+                    className='input-cor'
+                    value={corDestaque}
+                    onChange={evt => {
+                        mudaCor(evt.target.value, nome)
+                    }}
+                />
             </div>
-            <h2>{props.nome}</h2>
-            <div className='linha-horizontal' style={{ backgroundColor: props.corDestaque }}></div>
+
+            <h2>{nome}</h2>
+            <div className='linha-horizontal' style={{ backgroundColor: corDestaque }}></div>
+            
             <div className='cards'>
-                {props.colaboradores.map((colaborador, index) =>
+                {colaboradores.map((colaborador, indice) =>
                     <Card
-                        key={index}
+                        key={indice}
                         nome={colaborador.nome}
                         cargo={colaborador.cargo}
                         imagem={colaborador.imagem || 'https://github.com/Alura.png'}
-                        corDestaque={props.corDestaque}
-                        aoDeletar={props.aoDeletar}
+                        corDestaque={corDestaque}
+                        aoDeletar={aoDeletar}
                     />
                 )}
             </div>
