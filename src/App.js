@@ -77,7 +77,7 @@ export default function App() {
   }
 
   function deletarColaborador() {
-    
+    console.log('Deletei')
   }
 
   return (

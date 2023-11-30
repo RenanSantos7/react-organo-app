@@ -3,7 +3,7 @@ import './Time.css'
 
 export default function Time(props) {
 
-    if (props.colaboradores.length > 0) {
+    if (props.colaboradores.length === 0) {
         return null
     }
 
@@ -12,9 +12,9 @@ export default function Time(props) {
             <h3>{props.nome}</h3>
             <div className='linha-horizontal' style={{ backgroundColor: props.corDestaque }}></div>
             <div className='cards'>
-                {props.colaboradores.map(colaborador =>
+                {props.colaboradores.map((colaborador, index) =>
                     <Card
-                        key={colaborador.nome}
+                        key={index}
                         nome={colaborador.nome}
                         cargo={colaborador.cargo}
                         imagem={colaborador.imagem || 'https://github.com/Alura.png'}
