@@ -9,7 +9,10 @@ export default function Time(props) {
 
     return (
         <section className='time' style={{ backgroundColor: props.corFundo }}>
-            <h3>{props.nome}</h3>
+            <div className='color-input-wrapper'>
+                <input type='color' className='input-cor' value={props.corDestaque} />
+            </div>
+            <h2>{props.nome}</h2>
             <div className='linha-horizontal' style={{ backgroundColor: props.corDestaque }}></div>
             <div className='cards'>
                 {props.colaboradores.map((colaborador, index) =>

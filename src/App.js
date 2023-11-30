@@ -80,6 +80,14 @@ export default function App() {
     console.log('Deletei')
   }
 
+  function mudaCorTime(cor, nome) {
+    setTimes(times.map(time => {
+      if (time.nome === nome) {
+        time.corDestaque = cor
+      }
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -88,17 +96,23 @@ export default function App() {
         aoCadastrarColab={colaborador => aoAddNvColaborador(colaborador)}
         timesNomes = {timesNomes}
       />
-    
-      {times.map(time =>
-        <Time
-          key={time.nome}
-          nome={time.nome}
-          corDestaque={time.corDestaque}
-          corFundo={time.corFundo}
-          colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
-          aoDeletar={deletarColaborador}
-        />
-      )}
+
+      <section className='times'>
+        <h1>Minha Organização</h1>
+        <div className='linha-horizontal'></div>
+      
+        {times.map(time =>
+          <Time
+            key={time.nome}
+            nome={time.nome}
+            corDestaque={time.corDestaque}
+            corFundo={time.corFundo}
+            colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+            aoDeletar={deletarColaborador}
+            mudarCor={mudaCorTime}
+          />
+        )}
+      </section>
 
       <Rodape />
     </div>
