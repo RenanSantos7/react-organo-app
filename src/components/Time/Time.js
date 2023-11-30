@@ -3,7 +3,7 @@ import './Time.css'
 
 export default function Time(props) {
 
-    if (props.colaboradores.length === 0) {
+    if (props.colaboradores.length <= 0) {
         return null
     }
 
