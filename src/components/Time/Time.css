@@ -26,6 +26,7 @@
     text-align: center;
     width: 100%;
     position: relative;
+    background-blend-mode: screen;
 }
 
 .time h2 {

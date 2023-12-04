@@ -8,7 +8,7 @@
     height: 320px;
     position: relative;
     overflow: hidden;
-    background-color: white;
+    background-color: var(--bg-card);
     box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
 }
@@ -20,8 +20,8 @@
     top: 40px;
     left: calc(50% - 60px);
     border-radius: 50%;
-    border: 3px solid white;
-    background-color: #f6f6f6;
+    border: 3px solid var(--bg-card);
+    background-color: var(--bg-card);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
 }
 
@@ -43,6 +43,7 @@
     font-size: 1rem;
     margin: 0;
     padding: 0;
+    color: var(--cor-texto);
 }
 
 .deletar {

@@ -6,7 +6,7 @@
 
 .formulario form {
     max-width: 80%;
-    background-color: var(--cor3);
+    background-color: var(--bg-form);
     border-radius: 24px;
     padding: 36px 96px;
     box-shadow: 8px 8px 16px rgba(0,0,0,0.08);
@@ -16,6 +16,8 @@
     font-family: var(--fonte-titulo);
     font-weight: 400;
     font-size: 1.8rem;
-    color: #212121;
 }
 
+label, input, select, option {
+    color: var(--cor-texto)
+}

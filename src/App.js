@@ -6,13 +6,13 @@ import Rodape from './components/Rodape/Rodape';
 
 export default function App() {
   const [times, setTimes] = useState([
-    {nome:'Programação', corDestaque: '#57c278', corFundo: '#d9f7e9'},
-    {nome:'Front-End', corDestaque:'#82cffa', corFundo:'#e8f8ff'},
-    {nome:'Data Science', corDestaque:'#a6d157', corFundo:'#F0F8E2'},
-    {nome:'DevOps', corDestaque:'#d06b69', corFundo:'#fde7e8'},
-    {nome:'UX e Design', corDestaque:'#db6ebf', corFundo:'#fae9f5'},
-    {nome:'Mobile', corDestaque:'#ffba05', corFundo:'#fff5d9'},
-    {nome:'Inovação e Gestão', corDestaque:'#ff8a29', corFundo:'#ffeedf'}
+    {nome:'Programação', cor: '#57c278'},
+    {nome:'Front-End', cor:'#82cffa'},
+    {nome:'Data Science', cor:'#a6d157'},
+    {nome:'DevOps', cor:'#d06b69'},
+    {nome:'UX e Design', cor:'#db6ebf'},
+    {nome:'Mobile', cor:'#ffba05'},
+    {nome:'Inovação e Gestão', cor:'#ff8a29'}
   ])
 
   let timesNomes = times.map(item => `${item.nome}`)
@@ -83,7 +83,7 @@ export default function App() {
   function mudaCorTime(cor, nome) {
     setTimes(times.map(time => {
       if(time.nome === nome) {
-        time.corDestaque = cor;
+        time.cor = cor;
       }
       return time;
     }));
@@ -106,8 +106,7 @@ export default function App() {
           <Time
             key={time.nome}
             nome={time.nome}
-            corDestaque={time.corDestaque}
-            corFundo={time.corFundo}
+            cor={time.cor}
             colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}
             mudaCor={mudaCorTime}
