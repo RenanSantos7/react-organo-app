@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Banner from './components/Banner/Banner';
 import Formulario from './components/Formulario/Formulario';
 import Time from './components/Time/Time';
@@ -6,13 +7,13 @@ import Rodape from './components/Rodape/Rodape';
 
 export default function App() {
   const [times, setTimes] = useState([
-    {nome:'Programação', cor: '#57c278'},
-    {nome:'Front-End', cor:'#82cffa'},
-    {nome:'Data Science', cor:'#a6d157'},
-    {nome:'DevOps', cor:'#d06b69'},
-    {nome:'UX e Design', cor:'#db6ebf'},
-    {nome:'Mobile', cor:'#ffba05'},
-    {nome:'Inovação e Gestão', cor:'#ff8a29'}
+    {nome:'Programação', cor: '#57c278', id: uuidv4()},
+    {nome:'Front-End', cor:'#82cffa', id: uuidv4()},
+    {nome:'Data Science', cor:'#a6d157', id: uuidv4()},
+    {nome:'DevOps', cor:'#d06b69', id: uuidv4()},
+    {nome:'UX e Design', cor:'#db6ebf', id: uuidv4()},
+    {nome:'Mobile', cor:'#ffba05', id: uuidv4()},
+    {nome:'Inovação e Gestão', cor:'#ff8a29', id: uuidv4()}
   ])
 
   let timesNomes = times.map(item => `${item.nome}`)
@@ -20,49 +21,56 @@ export default function App() {
  
   const colaboradoresOriginais = [
     {
-      id: '0',
+      id: uuidv4(),
       nome: 'Monica Hillman',
       cargo: 'Desenvolvedora Front-End e Instrutora na Alura',
       imagem: 'https://github.com/monicahillman.png',
       time: 'Front-End'
     },
     {
-      id: '1',
+      id: uuidv4(),
+      nome: 'Rafa Ballerini',
+      cargo: 'Desenvolvedora de software, instrutora e criadora de conteúdo',
+      imagem: 'https://github.com/rafaballerini.png',
+      time: 'Data Science'
+    },
+    {
+      id: uuidv4(),
       nome: 'Juliana Amoasei',
       cargo: 'Desenvolvedora de Software e Instrutora na Alura',
       imagem: 'https://github.com/JulianaAmoasei.png',
       time: 'Programação'
     },
     {
-      id: '2',
+      id: uuidv4(),
       nome: 'Guilherme Lima',
       cargo: 'Desenvolvedora Front-End e Instrutora na Alura',
       imagem: 'https://github.com/guilhermeonrails.png',
       time: 'Front-End'
     },
     {
-      id: '3',
+      id: uuidv4(),
       nome: 'Vinicios Neves',
       cargo: 'Instrutor na Alura',
       imagem: 'https://github.com/viniciosneves.png',
       time: 'DevOps'
     },
     {
-      id: '4',
+      id: uuidv4(),
       nome: 'Paulo Silveira',
       cargo: 'Hipster e CEO da Alura',
       imagem:  'https://github.com/Alura.png',
       time: 'Inovação e Gestão'
     },
     {
-      id: '5',
+      id: uuidv4(),
       nome: 'Luiz Fernando Ribeiro',
       cargo: 'Instrutor na Alura',
       imagem:  'https://github.com/lfrprazeres.png',
       time: 'Programação'
     },
     {
-      id: '6',
+      id: uuidv4(),
       nome: 'Isadora Cardoso',
       cargo: 'Instrutor na Alura',
       imagem:  'https://cdn2.gnarususercontent.com.br/1/1159677/d270e454-a78c-415e-9f1b-dd237137100a.jpg',
@@ -76,13 +84,13 @@ export default function App() {
     setColaboradores([...colaboradores, colaborador])
   }
 
-  function deletarColaborador() {
-    console.log('Deletei')
+  function deletarColaborador(id) {
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
 
-  function mudaCorTime(cor, nome) {
+  function mudaCorTime(cor, id) {
     setTimes(times.map(time => {
-      if(time.nome === nome) {
+      if(time.id === id) {
         time.cor = cor;
       }
       return time;
@@ -104,9 +112,8 @@ export default function App() {
       
         {times.map(time =>
           <Time
-            key={time.nome}
-            nome={time.nome}
-            cor={time.cor}
+            key={time.id}
+            time={time}
             colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}
             mudaCor={mudaCorTime}

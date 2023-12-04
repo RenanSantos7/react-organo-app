@@ -20,8 +20,8 @@
 
 @media screen and (prefers-color-scheme: dark) {
   :root{
-    --bg-geral: #202020;
-    --bg-form: #2b2b2b;
+    --bg-geral: #2b2b2b;
+    --bg-form: #202020;
     --bg-card: #3f3f3f;
     --cor-texto: #fafafa;
   }
