@@ -1,5 +1,6 @@
 import './Formulario.css';
 import CampoTexto from '../CampoTexto/CampoTexto';
+import CampoCor from '../CampoCor/CampoCor';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import Botao from '../Botao/Botao';
 import { useState } from 'react'
@@ -9,21 +10,25 @@ export default function Formulario(props) {
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
+    const [nomeTime, setNomeTime] = useState('')
+    const [corTime, setCorTime] = useState('#6278F2')
+    const [mensagemTime, setMensagemTime] = useState('')
 
     function aoSalvar(event) {
         event.preventDefault();
         props.aoCadastrarColab({
             nome: nome,
             cargo: cargo,
-            imagem: imagem,
+            imagem: imagem || 'https://github.com/alura.png',
             time: time
         })
 
         // Limpar os campos após o envio do formulário
-        setNome('');
-        setCargo('');
-        setImagem('');
-        setTime('');
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('')
+        setMensagemTime('')
     }
 
     return(
@@ -62,6 +67,33 @@ export default function Formulario(props) {
                 />
 
                 <Botao>Criar Card</Botao>
+            </form>
+
+            <form onSubmit={evt => {
+                evt.preventDefault()
+                props.cadastrarTime({ nome: nomeTime, cor: corTime })
+                
+                setNomeTime('')
+                setCorTime('#6278F2')
+                setMensagemTime('Time criado!')
+            }}>
+            <h2>Preencha os dados para criar um novo time</h2>
+                <CampoTexto
+                    obrigatorio
+                    label="Nome"
+                    placeholder="Digite o nome do novo time"
+                    valor={nomeTime}
+                    aoAlterar = {valor => setNomeTime(valor)}
+                />
+                
+                <CampoCor
+                    obrigatorio
+                    label="Cor"
+                    valor={corTime}
+                    aoAlterar = {valor => setCorTime(valor)}
+                />
+                <span className='mensagem-time-criado'>{mensagemTime}</span>
+                <Botao>Criar Time</Botao>
             </form>
         </section>
     )

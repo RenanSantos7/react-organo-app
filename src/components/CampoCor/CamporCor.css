@@ -1,0 +1,17 @@
+.campo-cor {
+    margin: 24px 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.campo-cor label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.campo-cor input::placeholder {
+    font-style: italic;
+}

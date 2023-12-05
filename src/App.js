@@ -97,11 +97,16 @@ export default function App() {
     }));
   }
 
+  function cadastrarTime(novoTime) {
+    setTimes([...times, {...novoTime, id:uuidv4()}])
+  }
+
   return (
     <div className="App">
       <Banner />
     
       <Formulario
+        cadastrarTime={cadastrarTime}
         aoCadastrarColab={colaborador => addNvColaborador(colaborador)}
         timesNomes = {timesNomes}
       />
