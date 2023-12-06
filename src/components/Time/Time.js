@@ -2,7 +2,7 @@ import './Time.css'
 import Card from '../Card/Card'
 import hexToRgba from 'hex-to-rgba';
 
-export default function Time({ time, colaboradores, aoDeletar, mudaCor }) {
+export default function Time({ time, colaboradores, aoDeletar, mudaCor, aoFavoritar }) {
 
     if (colaboradores.length <= 0) {
         return null
@@ -25,14 +25,17 @@ export default function Time({ time, colaboradores, aoDeletar, mudaCor }) {
             <div className='linha-horizontal' style={{ backgroundColor: time.cor }}></div>
 
             <div className='cards'>
-                {colaboradores.map((colaborador, indice) =>
-                    <Card
-                        key={indice}
-                        colaborador={colaborador}
-                        cor={time.cor}
-                        aoDeletar={aoDeletar}
-                    />
-                )}
+                {colaboradores.map((colaborador, indice) => {
+                    return (
+                        <Card
+                            key={indice}
+                            colaborador={colaborador}
+                            cor={time.cor}
+                            aoDeletar={aoDeletar}
+                            aoFavoritar={aoFavoritar}
+                        />
+                    )
+                })}
             </div>
         </section>
     )

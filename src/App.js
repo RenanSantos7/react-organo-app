@@ -22,6 +22,7 @@ export default function App() {
   const colaboradoresOriginais = [
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Monica Hillman',
       cargo: 'Desenvolvedora Front-End e Instrutora na Alura',
       imagem: 'https://github.com/monicahillman.png',
@@ -29,6 +30,7 @@ export default function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Rafa Ballerini',
       cargo: 'Desenvolvedora de software, instrutora e criadora de conteúdo',
       imagem: 'https://github.com/rafaballerini.png',
@@ -36,6 +38,7 @@ export default function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Juliana Amoasei',
       cargo: 'Desenvolvedora de Software e Instrutora na Alura',
       imagem: 'https://github.com/JulianaAmoasei.png',
@@ -43,6 +46,7 @@ export default function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Guilherme Lima',
       cargo: 'Desenvolvedora Front-End e Instrutora na Alura',
       imagem: 'https://github.com/guilhermeonrails.png',
@@ -50,6 +54,7 @@ export default function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Vinicios Neves',
       cargo: 'Instrutor na Alura',
       imagem: 'https://github.com/viniciosneves.png',
@@ -57,6 +62,7 @@ export default function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Paulo Silveira',
       cargo: 'Hipster e CEO da Alura',
       imagem:  'https://github.com/Alura.png',
@@ -64,6 +70,7 @@ export default function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Luiz Fernando Ribeiro',
       cargo: 'Instrutor na Alura',
       imagem:  'https://github.com/lfrprazeres.png',
@@ -71,6 +78,7 @@ export default function App() {
     },
     {
       id: uuidv4(),
+      favorito: false,
       nome: 'Isadora Cardoso',
       cargo: 'Instrutor na Alura',
       imagem:  'https://cdn2.gnarususercontent.com.br/1/1159677/d270e454-a78c-415e-9f1b-dd237137100a.jpg',
@@ -101,6 +109,18 @@ export default function App() {
     setTimes([...times, {...novoTime, id:uuidv4()}])
   }
 
+  function resolverFavorito(id) {
+    setColaboradores(colaboradores.map(
+      colaborador => {
+        if (colaborador.id === id) {
+          colaborador.favorito = !colaborador.favorito
+        }
+
+        return colaborador
+      }
+    ))
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -122,6 +142,7 @@ export default function App() {
             colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
             aoDeletar={deletarColaborador}
             mudaCor={mudaCorTime}
+            aoFavoritar={resolverFavorito}
           />
         )}
       </section>

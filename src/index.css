@@ -41,11 +41,11 @@ body {
   font-family: var(--fonte-texto);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--cor-texto);
 }
 
 h1, h2 {
   font-family: var(--fonte-titulo);
-  color: var(--cor-texto);
 }
 
 .times h1 {
