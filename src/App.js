@@ -123,7 +123,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner enderecoImagem='/images/HeaderHeader_total.png' />
     
       <Formulario
         cadastrarTime={cadastrarTime}
