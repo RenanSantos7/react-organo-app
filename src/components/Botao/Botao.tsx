@@ -2,7 +2,7 @@ import './Botao.css'
 import { ReactElement } from 'react'
 
 interface BotaoProps {
-    children: ReactElement
+    children: ReactElement | string
 }
 
 export default function Botao(props: BotaoProps) {

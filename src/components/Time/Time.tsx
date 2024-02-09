@@ -1,15 +1,30 @@
 import './Time.css'
 import Card from '../Card/Card'
 import hexToRgba from 'hex-to-rgba';
+import { ITime } from '../../tipos/ITime';
+import { IColaborador } from '../../tipos/IColaborador';
 
-export default function Time({ time, colaboradores, aoDeletar, mudaCor, aoFavoritar }) {
+interface TimeProps {
+    time: ITime
+    colaboradores: IColaborador[]
+    aoDeletar: (id: string | undefined) => void
+    mudaCor: (cor: string, id:string | undefined) => void
+    aoFavoritar: (id: string | undefined) => void
+}
+
+export default function Time({ time, colaboradores, aoDeletar, mudaCor, aoFavoritar }:TimeProps) {
 
     if (colaboradores.length <= 0) {
         return null
     }
 
     return (
-        <section className='time' style={{ backgroundColor: hexToRgba(time.cor, 0.2), backgroundImage: 'url(/images/fundo.png)' }}>
+        <section
+            className='time'
+            style={{
+                backgroundColor: hexToRgba(time.cor, 0.2),
+                backgroundImage: 'url(/images/fundo.png)'
+            }}>
             <div className='color-input-wrapper'>
                 <input
                     type='color'

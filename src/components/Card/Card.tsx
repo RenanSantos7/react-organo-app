@@ -1,9 +1,16 @@
 import './Card.css'
 import { IoClose } from "react-icons/io5";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { IColaborador } from '../../tipos/IColaborador';
 
+interface CardProps {
+    colaborador: IColaborador
+    cor: string
+    aoDeletar: (id:string | undefined) => void
+    aoFavoritar: (id: string | undefined) => void
+}
 
-export default function Card({ colaborador, cor, aoDeletar, aoFavoritar }) {
+export default function Card({ colaborador, cor, aoDeletar, aoFavoritar }: CardProps) {
     function favoritar() {
         aoFavoritar(colaborador.id)
     }

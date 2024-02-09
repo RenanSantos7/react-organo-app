@@ -4,8 +4,16 @@ import CampoCor from '../CampoCor/CampoCor';
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa';
 import Botao from '../Botao/Botao';
 import { useState } from 'react'
+import { IColaborador } from '../../tipos/IColaborador';
+import { ITime } from '../../tipos/ITime';
 
-export default function Formulario(props) {
+interface FormularioProps {
+    aoCadastrarColab: (colaborador: IColaborador) => void
+    cadastrarTime: (time: ITime) => void
+    timesNomes: string[]
+}
+
+export default function Formulario({aoCadastrarColab, cadastrarTime, timesNomes}:FormularioProps) {
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -14,9 +22,10 @@ export default function Formulario(props) {
     const [corTime, setCorTime] = useState('#6278F2')
     const [mensagemTime, setMensagemTime] = useState('')
 
-    function aoSalvar(event) {
+
+    function aoSalvar(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        props.aoCadastrarColab({
+        aoCadastrarColab({
             nome: nome,
             cargo: cargo,
             imagem: imagem || 'https://github.com/alura.png',
@@ -55,13 +64,13 @@ export default function Formulario(props) {
                     label="Imagem"
                     placeholder="Cole a URL da imagem"
                     valor={imagem}
-                    aoAlterar = {valor => setImagem(valor)}
+                    aoAlterar={valor => setImagem(valor)}
                 />
                 
                 <ListaSuspensa
                     obrigatorio={true}
                     label="Times"
-                    itens={props.timesNomes}
+                    itens={timesNomes}
                     valor={time}
                     aoAlterar = {valor => setTime(valor)}
                 />
@@ -71,7 +80,7 @@ export default function Formulario(props) {
 
             <form onSubmit={evt => {
                 evt.preventDefault()
-                props.cadastrarTime({ nome: nomeTime, cor: corTime })
+                cadastrarTime({ nome: nomeTime, cor: corTime })
                 
                 setNomeTime('')
                 setCorTime('#6278F2')

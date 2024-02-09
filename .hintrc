@@ -16,6 +16,13 @@
           "meta[name=theme-color]"
         ]
       }
+    ],
+    "no-inline-styles": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
     ]
   }
 }

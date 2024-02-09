@@ -4,7 +4,7 @@ import instaLogo from './ig.png'
 import twLogo from './tw.png'
 import logo from './logo.png'
 
-export default function Rodape(props) {
+export default function Rodape() {
     return (
         <footer className='footer'>
             <div className='container'>
