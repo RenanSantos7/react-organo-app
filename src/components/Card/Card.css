@@ -41,8 +41,14 @@
 .card p {
     font-size: 1rem;
     margin: 0;
+    margin-bottom: .5rem;
     padding: 0;
     color: var(--cor-texto);
+}
+
+.text-container__data {
+    opacity: 0.25;
+    font-weight: 700;
 }
 
 .deletar {

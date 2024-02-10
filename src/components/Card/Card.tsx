@@ -33,6 +33,7 @@ export default function Card({ colaborador, cor, aoDeletar, aoFavoritar }: CardP
                 <div className='text-container' style={{borderTopColor: cor}}>
                     <h4>{colaborador.nome}</h4>
                     <p>{colaborador.cargo}</p>
+                    <p className='text-container__data'>{new Date(colaborador.data).toLocaleDateString()}</p>
                     <div className='favoritar'>
                         {colaborador.favorito
                             ? <FaHeart {...propsFavorito} color='red' />

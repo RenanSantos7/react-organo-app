@@ -21,7 +21,7 @@ export default function Formulario({aoCadastrarColab, cadastrarTime, timesNomes}
     const [nomeTime, setNomeTime] = useState('')
     const [corTime, setCorTime] = useState('#6278F2')
     const [mensagemTime, setMensagemTime] = useState('')
-
+    const [data, setData] = useState('')
 
     function aoSalvar(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -29,7 +29,8 @@ export default function Formulario({aoCadastrarColab, cadastrarTime, timesNomes}
             nome: nome,
             cargo: cargo,
             imagem: imagem || 'https://github.com/alura.png',
-            time: time
+            time: time,
+            data: data
         })
 
         // Limpar os campos após o envio do formulário
@@ -65,6 +66,14 @@ export default function Formulario({aoCadastrarColab, cadastrarTime, timesNomes}
                     placeholder="Cole a URL da imagem"
                     valor={imagem}
                     aoAlterar={valor => setImagem(valor)}
+                />
+
+                <CampoTexto
+                    label='Data de entrada no time'
+                    placeholder=''
+                    valor={data}
+                    aoAlterar={valor => setData(valor)}
+                    tipo='date'
                 />
                 
                 <ListaSuspensa
